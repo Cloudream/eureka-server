@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  datacenter: ShanDong
+  environment: product
+  server:
+    #关闭自我保护
+    enable-self-preservation: false
+    #清理服务器
+    #eviction-interval-timer-in-ms: 5000
+  client:
+    healthcheck:
+      enabled: true
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  
